@@ -1,8 +1,13 @@
+
 ---
 output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+```{r setup, include=FALSE}
+devtools::load_all()
+
+```
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -11,6 +16,16 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+```
+
+```{r}
+kmer_freq <- function(seq, k = 3) {
+  seq <- toupper(seq)
+  n <- nchar(seq)
+  kmers <- substring(seq, 1:(n-k+1), k:(n))
+  table(kmers)
+}
+
 ```
 
 # ncounter
@@ -28,15 +43,16 @@ You can install the development version of ncounter from [GitHub](https://github
 # install.packages("pak")
 pak::pak("oliviarizzati/ncounter")
 ```
+```{r}
+```
+
+
+```{r}
+```
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-library(ncounter)
-## basic example code
-```
 
 What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
 
