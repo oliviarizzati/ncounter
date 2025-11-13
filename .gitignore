@@ -1,3 +1,4 @@
+Sys.getenv("GITHUB_PAT")
 .Rproj.user
 .Rhistory
 .RData
